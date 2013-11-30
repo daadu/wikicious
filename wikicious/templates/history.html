@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block admin %}
+<br>
+	<table>
+		{% set i=0 %}
+	{%for l in li %}
+
+			<tr>
+				<td>{{l.last_modified.strftime("%b %d %Y %H:%M:%S")}}</td>
+				<td width="460">{{l.content[:60]}}</td>
+				<td><a href="{{l.url}}?v={{i}}">view</a></td>
+				<td><a href="/_edit{{l.url}}?e={{l.key().id()}}">edit</a></td>
+			</tr>
+		{% set i= i+1 %}
+	{% endfor %}
+	</table>
+{% endblock %}

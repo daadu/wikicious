@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block admin %}
+<h2>SignUp</h2>
+<script type="text/javascript">
+ var RecaptchaOptions = {
+    theme : 'clean'
+ };
+ </script>
+	<form method="post">
+		<label><div>Username</div>
+		<input type="text" name="username" value="{{username}}"><div class="error">{{err1}}</div></label>
+		<label><div>Password</div>
+		    <input type="password" name="password"><div class="error">{{err2}}</div></label>
+		<label><div>Verify Password</div>
+		    <input type="password" name="verify"><div class="error">{{err3}}</div></label>
+		<label><div>Email (optional)</div>
+		    <input type="text" name="email" value="{{email}}"><div class="error">{{err4}}</div></label>
+		    <label><div>are you human?</div>
+	<script type="text/javascript"
+     src="//www.google.com/recaptcha/api/challenge?k=6LeyS-MSAAAAAGB6CxYOxv2CX8rTofqztpoZjtOf">
+  </script>
+  <noscript>
+     <iframe src="//www.google.com/recaptcha/api/noscript?k=6LeyS-MSAAAAAGB6CxYOxv2CX8rTofqztpoZjtOf"
+         height="300" width="500" frameborder="0"></iframe><br>
+     <textarea name="recaptcha_challenge_field" rows="3" cols="40">
+     </textarea>
+     <input type="hidden" name="recaptcha_response_field"
+         value="manual_challenge">
+  </noscript>
+  </label>
+  <div class="error">{{err5}}</div>
+<br>
+  		<div><input type="submit" value="SignUp"></div>
+	</form>
+{% endblock %}

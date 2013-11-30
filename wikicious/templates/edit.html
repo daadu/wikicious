@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block admin %}
+<form method ="post">
+	<div>
+	<label>content<br>
+		<textarea class="content" name="content">{{cont}}</textarea>
+		<div class="error">{{error}}</div>
+	</label></div>
+	<input type="submit">
+</form>
+{% endblock %}
