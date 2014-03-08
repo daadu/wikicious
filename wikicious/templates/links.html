@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block admin %}
+<div>
+	<ul>{% if links %}
+		<b><li>Links  :  TweetID</li></b>
+		{% endif %}
+		{% for l in links %}
+		<li><a href="{{l.tweetlink}}">{{l.tweetlink}}</a> : {{l.tweetid}}</li>
+		{% endfor %}
+	</ul>
+	<div>	
+		{% if addtwitter %}
+		<form method="post" action="/links">
+			<input type="submit" value="Sync Twitter">
+		</form>
+		{% else %}
+		<form method="post" action="/links/update">
+			<label>Twitter_Username : {{user}}</label>
+			<input type='submit' value='Update Links'>
+		</form>
+		<br>
+		<form method="post" action="/links">
+			<input type="submit" value="reSync Twitter">
+		</form>
+		{% endif %}
+	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+	<meta name="viewport" content="user-scalable=no, width=300, initial-scale=1, maximum-scale=1">
+	<title>Mobile Drawing Tool</title>
+	<style type="text/css">
+	body{
+		width: 100%;
+		margin: 0;
+		padding: 0;
+	}
+	canvas{
+		border: 2px solid;
+	}
+	</style>
+	<script>
+	function preloadImage(url){
+    	var img=new Image();
+    	img.src=url;
+	}
+	preloadImage("/static/cat.jpeg");
+	</script>
+</head>
+<body>
+	<canvas id="canvas"></canvas>
+	<script type="text/javascript" src="/static/hammer.min.js"></script>
+	<script type="text/javascript" src="/static/draw.js"></script>
+</body>
+</html>
